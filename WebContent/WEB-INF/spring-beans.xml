@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+              http://www.springframework.org/schema/tx
+              http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+              
+  
+ <bean class="dao.User" id="u" />
+<bean class="dao.CRUDdao" id="crudUser"  init-method="init" >
+	<property name="t" ref="u"></property>
+</bean>
+<bean class="services.CRUDService" id="user">
+	<property name="dao" ref="crudUser"  ></property>
+</bean>
+
+ <bean class="dao.Pub" id="p" />
+<bean class="dao.CRUDdao" id="crudPub"  init-method="init" >
+	<property name="t" ref="p"></property>
+</bean>
+<bean class="services.CRUDService" id="pub">
+	<property name="dao" ref="crudPub"  ></property>
+</bean>
+
+
+ <bean class="dao.Ville" id="v" />
+<bean class="dao.CRUDdao" id="crudVille"  init-method="init" >
+	<property name="t" ref="v"></property>
+</bean>
+<bean class="services.CRUDService" id="ville">
+	<property name="dao" ref="crudVille"  ></property>
+</bean>
+
+
+ <bean class="dao.Offre" id="o" />
+<bean class="dao.CRUDdao" id="crudOffre"  init-method="init" >
+	<property name="t" ref="o"></property>
+</bean>
+<bean class="services.CRUDService" id="offre">
+	<property name="dao" ref="crudOffre"  ></property>
+</bean>
+
+
+ <bean class="dao.Ville_Pub" id="vp" />
+<bean class="dao.CRUDdao" id="crudVp"  init-method="init" >
+	<property name="t" ref="vp"></property>
+</bean>
+<bean class="services.CRUDService" id="VillePub">
+	<property name="dao" ref="crudVp"  ></property>
+</bean>
+
+
+ </beans>
+ 
+ 
