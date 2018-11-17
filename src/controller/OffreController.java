@@ -43,9 +43,10 @@ public class OffreController {
 			@RequestParam String prix,
 			@RequestParam String places) throws ParseException
 	{
+		System.out.println(ville_Depart+"; "+date_depart+"; "+ville_Arrivee+"; "+date_arrivee+"; "+station+"; "+prix+"; "+places);
 		// convertion de la date 
 		SimpleDateFormat spf = new SimpleDateFormat("yyyy-mm-dd");
-// création de l'offre
+        // création de l'offre
 		Offre pub = new Offre();
 		pub.setDate_arrivee(spf.parse(date_depart));
 		pub.setDate_depart(spf.parse(date_arrivee));
