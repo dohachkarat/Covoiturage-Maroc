@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="display" uri="http://java.sun.com/jsp/jstl/core" %>    
+    
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -217,10 +219,25 @@
                   <h3>${errorM}</h3>
                   </div>
                 </form>
-               
               </div>
             </div>
           </div>
+          <h2> Offres de covoiturage: </h2>
+               <table class="table">
+                <display:forEach items="${listeOffres}" var="o" >
+			  <tr>
+			  <td> ${o.id} </td>
+			  <td> ${o.date_depart} </td>
+			  <td> ${o.places} </td>
+			  <td> ${o.prix} </td>
+			  <td>
+			  <display:forEach items="${o.ville_Pubs}" var="e" >
+			   <li>${ e.ville.nom }  :  ${e.type_station} 
+			  </display:forEach> 
+			  </td>
+			  </tr>
+               </display:forEach>
+               </table>
         </div>
       </div>
     </div>

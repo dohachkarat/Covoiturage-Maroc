@@ -2,6 +2,7 @@ package controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dao.Offre;
+import dao.Pub;
 import dao.User;
 import dao.Ville;
 import dao.Ville_Pub;
@@ -26,10 +28,19 @@ public class OffreController {
 	CRUDService<Offre> offre;
 	@Autowired
 	CRUDService<Ville_Pub> VillePub;
-
+	@Autowired
+	CRUDService<Pub> publication;
+	
+	
 	@RequestMapping(value ="/Offres")
-	public String IndexOffre()
+	public String IndexOffre(Model model)
 	{
+		for (Pub p : publication.getAllObject())
+		{
+			for (Ville_Pub vp : p.getVille_Pubs())
+			System.out.println(vp.getType_station() + " " + vp.getVille().getNom());
+		}
+		model.addAttribute("listeOffres", offre.getAllObject());
 		return "offres";
 	}
 	
@@ -60,7 +71,7 @@ public class OffreController {
 		ville2.setNom(ville_Arrivee);
 		
 		Ville ville3 = new Ville();
-		ville2.setNom(station);
+		ville3.setNom(station);
 		
 		//classe association entre ville et pub
 		Ville_Pub  ville_Pub = new Ville_Pub();
@@ -84,7 +95,11 @@ public class OffreController {
 		VillePub.add(ville_Pub3);
 		
 		model.addAttribute("messageSucces", "offre bien publiée");
+		model.addAttribute("listeOffres", offre.getAllObject());
 
 		return "offres";
 	}
+	
+
+	
 }

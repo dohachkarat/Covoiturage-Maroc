@@ -23,7 +23,7 @@
 <bean class="dao.CRUDdao" id="crudPub"  init-method="init" >
 	<property name="t" ref="p"></property>
 </bean>
-<bean class="services.CRUDService" id="pub">
+<bean class="services.CRUDService" id="publication">
 	<property name="dao" ref="crudPub"  ></property>
 </bean>
 

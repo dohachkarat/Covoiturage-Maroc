@@ -17,7 +17,7 @@ public class main {
 		// TODO Auto-generated method stub
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 		System.out.println("hh");
-
+/*
 		User user = new User( "doha", "hind", "feminin", sdf.parse("01/06/1995"), 
 				"0603942179",
 				"doha@hind.com", 
@@ -52,7 +52,7 @@ public class main {
 		
 		CRUDdao<Ville_Pub> cruDdao2 = new CRUDdao<>();
 		cruDdao2.add(ville_Pub);
-		cruDdao2.add(ville_Pub2);
+		cruDdao2.add(ville_Pub2);*/
 
 		
 		
