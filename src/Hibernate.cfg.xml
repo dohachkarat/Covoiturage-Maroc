@@ -39,6 +39,7 @@
       <mapping class="dao.Offre"/>
       <mapping class="dao.Ville"/>
       <mapping class="dao.Ville_Pub"/>
+      <mapping class="dao.Demande"/>
       
       
       

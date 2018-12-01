@@ -54,6 +54,13 @@
 	<property name="dao" ref="crudVp"  ></property>
 </bean>
 
+<bean class="dao.Demande" id="dm" />
+<bean class="dao.CRUDdao" id="crudDemande"  init-method="init" >
+	<property name="t" ref="dm"></property>
+</bean>
+<bean class="services.CRUDService" id="demande">
+	<property name="dao" ref="crudDemande"  ></property>
+</bean>
 
  </beans>
  

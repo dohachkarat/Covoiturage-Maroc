@@ -129,8 +129,8 @@
     -webkit-background-clip: text;
 }
     </style>
-    <script src="./Bootstrap/jquery-1.11.1.min.js.téléchargement"></script>
-    <script src="./Bootstrap/bootstrap.min.js.téléchargement"></script>
+    <script src="./Bootstrap/jquery-1.11.1.min.js.telechargement"></script>
+    <script src="./Bootstrap/bootstrap.min.js.telechargement"></script>
     <script type="text/javascript">
         window.alert = function(){};
         var defaultCSS = document.getElementById('bootstrap-css');
@@ -166,12 +166,12 @@
               <div class="col-lg-12">
                 <form id="login-form" action="login.aspx" method="post" role="form" style="display: block;">
                   <div class="form-group">
-                    <label for="username">Email</label>
-                    <input type="text" name="email" id="username" tabindex="1" class="form-control" placeholder="Email" required>
+                    <label for="sername">Email</label>
+                    <input type="text" name="email" id="sername" tabindex="1" class="form-control" placeholder="Email" required>
                   </div>
                   <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" required>
+                    <label for="assword">Password</label>
+                    <input type="password" name="password" id="assword" tabindex="2" class="form-control" placeholder="Password" required>
                   </div>
                   <div class="form-group text-center">
                     <input type="checkbox" tabindex="3" class="" name="remember" id="remember">

@@ -1,6 +1,8 @@
 package controller;
 
 import java.text.ParseException;
+
+
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -8,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import dao.Demande;
 import dao.Offre;
 import dao.Pub;
 import dao.User;
@@ -26,10 +30,16 @@ public class OffreController {
 	CRUDService<Ville> ville;
 	@Autowired
 	CRUDService<Offre> offre;
+	
+	@Autowired
+	CRUDService<Offre> demande;
+	
 	@Autowired
 	CRUDService<Ville_Pub> VillePub;
 	@Autowired
 	CRUDService<Pub> publication;
+	
+	//JUST ADDED
 	
 	
 	@RequestMapping(value ="/Offres")
@@ -100,6 +110,17 @@ public class OffreController {
 		return "offres";
 	}
 	
-
+	
+	@RequestMapping(value ="/Demandes")
+	public String IndexDemande(Model model)
+	{
+		for (Pub p : publication.getAllObject())
+		{
+			for (Ville_Pub vp : p.getVille_Pubs())
+			System.out.println(vp.getType_station() + " " + vp.getVille().getNom());
+		}
+		model.addAttribute("listeOffres", demande.getAllObject());
+		return "affDemande";
+	}
 	
 }
